@@ -1,0 +1,45 @@
+{% extends "admin_base.html" %}
+
+{% block admin_content %}
+<div class="admin-dashboard">
+    <section class="students-section">
+        <h2>Library Students</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll Number</th>
+                        <th>Book Status</th>
+                        <th>Borrowed Book</th>
+                        <th>Borrow Date</th>
+                        <th>Duration (Days)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.roll_number }}</td>
+                        <td>{{ "Has borrowed" if student.has_book else "No book borrowed" }}</td>
+                        {% if student.id in borrowed_books %}
+                            <td>{{ borrowed_books[student.id]['book_name'] }}</td>
+                            <td>{{ borrowed_books[student.id]['borrow_date'].strftime('%Y-%m-%d') }}</td>
+                            <td>{{ borrowed_books[student.id]['duration'] }}</td>
+                        {% else %}
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        {% endif %}
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="6" class="text-center">No students registered</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}

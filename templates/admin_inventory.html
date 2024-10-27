@@ -1,0 +1,44 @@
+{% extends "admin_base.html" %}
+
+{% block admin_content %}
+<div class="admin-dashboard">
+    <section class="add-book-section">
+        <h2>Add New Book</h2>
+        <form method="POST" action="{{ url_for('add_book') }}" class="add-book-form">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Book Name" required class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="number" name="quantity" placeholder="Quantity" required min="1" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Book</button>
+        </form>
+    </section>
+
+    <section class="inventory-section">
+        <h2>Book Inventory (Total Books: {{ total_books }})</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Book Name</th>
+                        <th>Available Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                    <tr>
+                        <td>{{ book.name }}</td>
+                        <td>{{ book.quantity }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="2" class="text-center">No books in inventory</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}

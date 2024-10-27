@@ -1,0 +1,254 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fffbe6; /* Light yellow background */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff9db; /* Slightly darker yellow */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(255, 82, 82, 0.2); /* Red shadow */
+    position: relative;
+}
+
+/* Typography */
+h1 {
+    color: #d32f2f; /* Red */
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.2em;
+}
+
+h2 {
+    color: #b71c1c; /* Darker red */
+    margin: 25px 0 15px;
+    font-size: 1.5em;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffccbc; /* Light orange/red */
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: white;
+}
+
+.form-control:focus {
+    border-color: #ff5252; /* Red */
+    outline: none;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #ff5252; /* Red */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #d32f2f; /* Darker red */
+}
+
+.approve-btn {
+    background-color: #4caf50; /* Keeping green for approval */
+    color: white;
+}
+
+.reject-btn {
+    background-color: #ff5252; /* Red */
+    color: white;
+}
+
+.return-btn {
+    background-color: #ffd54f; /* Yellow */
+    color: #d32f2f; /* Red text */
+}
+
+.borrow-btn {
+    background-color: #ff5252; /* Red */
+    color: white;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff8a80; /* Light red */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: #ff5252; /* Red */
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ffccbc; /* Light orange/red */
+}
+
+.table th {
+    background-color: #ff8a80; /* Light red */
+    color: white;
+    font-weight: 600;
+}
+
+.table tr:hover {
+    background-color: #fff8e1; /* Very light yellow */
+}
+
+/* Alert Messages */
+.alert {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #ffebee; /* Very light red */
+    color: #d32f2f; /* Red */
+    text-align: center;
+}
+
+/* Auth Forms */
+.login-container,
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #ff5252; /* Red */
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Sections */
+.borrowed-book {
+    background-color: #fff8e1; /* Light yellow */
+    padding: 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+    border: 1px solid #ffccbc; /* Light orange/red */
+}
+
+.book-name {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #d32f2f; /* Red */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #ff8a80; /* Light red */
+}
+
+/* Admin Navigation */
+.admin-header {
+    background-color: #fff3e0; /* Light orange/yellow */
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ff5252; /* Red border */
+}
+
+.admin-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.admin-nav a {
+    text-decoration: none;
+    color: #d32f2f; /* Red */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.admin-nav a:hover {
+    color: #b71c1c; /* Darker red */
+    background-color: #ffebee; /* Very light red */
+}
+
+.admin-nav a.active {
+    color: #ff5252; /* Red */
+    font-weight: bold;
+    background-color: #ffebee; /* Very light red */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

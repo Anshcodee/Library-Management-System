@@ -1,0 +1,40 @@
+{% extends "admin_base.html" %}
+
+{% block admin_content %}
+<div class="admin-dashboard">
+    <section class="pending-requests-section">
+        <h2>Pending Borrow Requests</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Book</th>
+                        <th>Request Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for request in pending_requests %}
+                    <tr>
+                        <td>{{ request.student_name }}</td>
+                        <td>{{ request.book_name }}</td>
+                        <td>{{ request.borrow_date.strftime('%Y-%m-%d') }}</td>
+                        <td class="action-buttons">
+                            <a href="{{ url_for('handle_request', borrow_id=request.id, action='approve') }}" 
+                               class="btn approve-btn">Approve</a>
+                            <a href="{{ url_for('handle_request', borrow_id=request.id, action='reject') }}" 
+                               class="btn reject-btn">Reject</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center">No pending requests</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}
