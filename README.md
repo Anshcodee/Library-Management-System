@@ -29,24 +29,43 @@ Frontend: HTML, CSS, Jinja2 Templates
 
 Project Structure
 library_management_system/
+
 │
+
 ├── static/
+
 │   └── style.css
+
 │
+
 ├── templates/
+
 │   ├── base.html
+
 │   ├── admin_base.html
+
 │   ├── admin_inventory.html
+
 │   ├── admin_students.html
+
 │   ├── admin_requests.html
+
 │   ├── login.html
+
 │   ├── register.html
+
 │   └── student_dashboard.html
+
 │
+
 ├── models/
+
 │   └── models.py
+
 │
+
 ├── config.py
+
 └── app.py
 
 Installation
@@ -57,11 +76,12 @@ git clone https://github.com/yourusername/library-management-system.git
 
 Create a virtual environment
 
-bashCopypython -m venv venv
+python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 (OR on mac:
-pip install virtualenv)
+virtualenv env
+source env/bin/activate)
 
 Install dependencies
 
