@@ -31,24 +31,43 @@ Project Structure
 library_management_system/
 
 │
+
 ├── static/
+
 │   └── style.css
+
 │
+
 ├── templates/
+
 │   ├── base.html
+
 │   ├── admin_base.html
+
 │   ├── admin_inventory.html
+
 │   ├── admin_students.html
+
 │   ├── admin_requests.html
+
 │   ├── login.html
+
 │   ├── register.html
+
 │   └── student_dashboard.html
+
 │
+
 ├── models/
+
 │   └── models.py
+
 │
+
 ├── config.py
+
 ├── initialise_db.py
+
 └── app.py
 
 Installation
